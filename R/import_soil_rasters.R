@@ -1,0 +1,22 @@
+#' imports appropriate rasters to create soil layers
+#'
+#' @param file_name The unique part of the file name to capture the right rasters for that soil
+#' @param dir_name The directory where the soil raster tif files are stored
+#' @return a list of rasters for each soil component
+#' @examples
+#' import_soil_rasters("af_PHIHOX_T__M")
+
+
+
+
+import_soil_rasters <- function(file_name, dir_name){
+
+  tif_files <- paste0(dir_name, "/", list.files(dir_name, pattern = ".tif$"))
+
+  tif_subset <- tif_files[grep(file_name, tif_files)]
+
+  raster_list = lapply(tif_subset, function(soil_layer) raster(soil_layer))
+
+  return(raster_list)
+
+}
