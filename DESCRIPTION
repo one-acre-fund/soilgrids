@@ -1,0 +1,18 @@
+Package: soilgrids
+Type: Package
+Title: Manipulates soil grids data for easier 1AF use
+Version: 0.1.0
+Author: Matt Lowes
+Maintainer: Matt Lowes <matt.lowes@oneacrefund.org>
+Description: This package accesses saved soil grids data, trims down the values for speedy extracts,
+    and extracts soil values for given GPS points. Future versions of the package will expand to working with 
+    spatial polygons.
+Imports: 
+    sp, 
+    rgdal, 
+    raster,
+    velox,
+    tidyverse
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
