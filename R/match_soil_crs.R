@@ -9,11 +9,12 @@
 match_soil_crs <- function(obj_to_convert){
 
   soil_crs <- "+proj=laea +lat_0=5 +lon_0=20 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0"
-  if(CRS(obj_to_convert) != soilCRS){
-    converted <- sp::spTransform(obj_to_convert, CRS(soil_crs))
+  if(sp::proj4string(obj_to_convert) != soil_crs){
+    converted <- sp::spTransform(obj_to_convert, sp::CRS(soil_crs))
     return(converted)
-  } else {
-    return(obj_to_convert)
   }
+
+  # else
+  return(obj_to_convert)
 
 }
