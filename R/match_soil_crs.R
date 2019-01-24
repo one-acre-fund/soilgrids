@@ -15,6 +15,6 @@ match_soil_crs <- function(obj_to_convert){
   }
 
   # else
-  return(obj_to_convert)
+  stop("\n Unable to align CRS of soil GPS or country boundaries to soil CRS")
 
 }
