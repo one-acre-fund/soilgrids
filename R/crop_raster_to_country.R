@@ -16,17 +16,17 @@ crop_raster_to_country <- function(raster_list, spdf, country_iso, data_director
   country_map <- intersect_map_and_points(spdf, country_iso, data_directory)
 
   if(length(raster_list) == 1){
-    raster_crop <- lapply(raster_list, function(x){crop(x, extent(country_map))})
-    raster_mask <- lapply(raster_crop, function(x){mask(x, country_map)})
+    raster_crop <- lapply(raster_list, function(x){raster::crop(x, raster::extent(country_map))})
+    raster_mask <- lapply(raster_crop, function(x){raster::mask(x, country_map)})
   } else {
     raster_crop <- lapply(raster_list, function(soil_set){
       lapply(soil_set, function(data_layer){
-        crop(data_layer, extent(country_map))})
+        raster::crop(data_layer, raster::extent(country_map))})
       })
 
     raster_mask <- lapply(raster_crop, function(soil_set){
       lapply(soil_set, function(data_layer){
-        mask(data_layer, country_map)})
+        raster::mask(data_layer, country_map)})
       })
   }
 
