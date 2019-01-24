@@ -13,7 +13,9 @@ apply_soil_weights <- function(raster_list, weight_list = list(5/30, 10/30, 15/3
     stop("\n Weights don't add up to 1. Check weights.")
   }
 
-  raster_weights = Map("*", raster_list, weight_list)
+  raster_weights = lapply(raster_list, function(soil_set){
+    Map("*", soil_set, weight_list)})
+
   return(raster_weights)
 
 }
