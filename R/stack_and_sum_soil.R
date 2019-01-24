@@ -9,6 +9,10 @@
 
 stack_and_sum_soil <- function(raster_list){
 
-  return(sum(stack(raster_list)))
+  soil_stack <- lapply(raster_list, function(data_layer){
+    return(sum(stack(data_layer)))
+  })
+
+  return(soil_stack)
 
 }
