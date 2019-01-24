@@ -7,7 +7,7 @@
 
 convert_soil_to_velox <- function(raster_list){
 
-  raster_list <- list(raster_list)
+  #raster_list <- list(raster_list)
   veloxLoop <- list()
   for(i in seq_along(raster_list)){
     tmp <- velox::velox(raster_list[[i]])
