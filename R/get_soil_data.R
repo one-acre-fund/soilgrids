@@ -19,9 +19,10 @@ get_soil_data <- function(spdf, country_iso,
 
   raw_rasters <- import_soil_rasters(layers_to_files(soil_layers), raw_data_directory)
 
-  data_extract <- extract_soil_gps(convert_soil_to_velox(stack_and_sum_soil(
-    apply_soil_weights(
-      crop_raster_to_country(raw_rasters, spdf, country_iso, country_polygon_directory)))), spdf, layers_to_files(soil_layers)$param)
+  data_extract <- extract_soil_gps(convert_soil_to_velox(
+    stack_and_sum_soil(
+      apply_soil_weights(
+        crop_raster_to_country(raw_rasters, spdf, country_iso, country_polygon_directory)))), spdf, layers_to_files(soil_layers)$param)
 
   df <- cbind(spdf@data, data_extract)
 
