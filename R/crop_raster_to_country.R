@@ -19,13 +19,13 @@ crop_raster_to_country <- function(raster_list, spdf, country_iso, data_director
     raster_crop <- lapply(raster_list, function(x){crop(x, extent(country_map))})
     raster_mask <- lapply(raster_crop, function(x){mask(x, country_map)})
   } else {
-    raster_crop <- lapply(raster_list, function(grouped_layer){
-      lapply(grouped_layer, function(data_layer){
+    raster_crop <- lapply(raster_list, function(soil_set){
+      lapply(soil_set, function(data_layer){
         crop(data_layer, extent(country_map))})
       })
 
-    raster_mask <- lapply(raster_crop, function(grouped_layer){
-      lapply(grouped_layer, function(data_layer){
+    raster_mask <- lapply(raster_crop, function(soil_set){
+      lapply(soil_set, function(data_layer){
         mask(data_layer, country_map)})
       })
   }
