@@ -1,0 +1,19 @@
+#' Given SPDF and country where the points are, put the SPDF and country outline
+#' in the same CRS as the soil data which we know is fixed
+#' @param obj_to_convert The spdf or polygon we need to convert
+#' @return that same object but in the correct CRS
+#' @examples
+#' apply_soil_weights("ph_soil_layer.tif")
+
+
+match_soil_crs <- function(obj_to_convert){
+
+  soil_crs <- "+proj=laea +lat_0=5 +lon_0=20 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0"
+  if(CRS(obj_to_convert) != soilCRS){
+    converted <- sp::spTransform(obj_to_convert, CRS(soil_crs))
+    return(converted)
+  } else {
+    return(obj_to_convert)
+  }
+
+}
