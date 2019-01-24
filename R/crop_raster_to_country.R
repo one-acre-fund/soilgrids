@@ -10,7 +10,7 @@
 #' apply_soil_weights("ph_soil_layer.tif")
 
 
-crop_velox_to_country <- function(raster_list, spdf, country_iso, data_directory){
+crop_raster_to_country <- function(raster_list, spdf, country_iso, data_directory){
 
   country_map <- intersect_map_and_points(spdf, country_iso, data_directory)
 
