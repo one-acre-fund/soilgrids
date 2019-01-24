@@ -8,7 +8,7 @@
 
 import_soil_rasters <- function(file_name, dir_name){
 
-  raw_rastesrs <- lapply(file_name, function(f){
+  raw_rastesrs <- lapply(file_name$file_name, function(f){
 
     tif_files <- paste0(dir_name, "/", list.files(dir_name, pattern = ".tif$"))
 
