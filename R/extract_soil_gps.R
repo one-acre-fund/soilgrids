@@ -8,7 +8,7 @@
 
 extract_soil_gps <- function(veloxRaster, spdf){
 
-  #align_crs(veloxRaster, spdf)
+  spdf <- match_soil_crs(spdf)
 
   ## here is where we extract the values for the given GPS values.
   extractLoop <- list()
@@ -25,16 +25,9 @@ extract_soil_gps <- function(veloxRaster, spdf){
   # combine gps points with extracted values
   dataList <- Map(cbind, spdfList, extractLoop)
 
-  #combine date labels with the gps points and extracted values so the data can be aggregated as desired based on dates
-  prepDates <- split(veloxRaster[[2]], veloxRaster[[2]]$date)
-
-  fullDfList <- mapply(function(x, y) cbind(x, y, row.names = NULL),
-                       prepDates, dataList, SIMPLIFY = FALSE)
-
-  fullDf <- plyr::rbind.fill(fullDfList)
-  names(fullDf)[names(fullDf) == "V1"] <- 'rainfall'
+  #names(dataList)[names(fullDf) == "V1"] <- 'rainfall' #<< how to know what to name this by feature...
 
   # return the combined meta data and the extracted values
-  return(fullDf)
+  return(dataList)
 
 }
