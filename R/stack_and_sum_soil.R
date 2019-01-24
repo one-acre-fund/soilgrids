@@ -1,18 +1,14 @@
-#' Prepares soil layer for inclusion in soil stack for GPS extraction
-#' @param raster_list a list of velox rasters with weights applied to be stacked
-#'   and summed.
+#' Takes weighted soil layers, creates stack, and sums values to create single soil raster for that parameter
+#' @param raster_list a list of weighted soil rasters
 #' @return a single raster layer that sums the soil values including the weights
 #'   for the velox extraction stage
 #' @examples
-#' prep_soil_layer()
+#' stack_and_sum_soil()
+#' @note This is a pretty simple function but I wanted to keep this separate from the other preparation stages.
 
 
-prepare_soil_layer <- function(raster_list){
+stack_and_sum_soil <- function(raster_list){
 
-  combined_layers <- lapply(raster_list, function(soil_layer){
-    return(sum(stack(apply_soil_weights(raster_list))))
-  })
-
-  return(combined_layers)
+  return(sum(stack(raster_list)))
 
 }
