@@ -20,6 +20,6 @@ extract_soil_gps <- function(velox_raster, spdf, soil_layers){
   df <- do.call(cbind, extract_loop)
   names(df) <- soil_layers
 
-  return(dataList)
+  return(df)
 
 }
