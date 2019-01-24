@@ -6,17 +6,18 @@
 #' @examples
 #' import_soil_rasters("af_PHIHOX_T__M", "/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/")
 
-
-
-
 import_soil_rasters <- function(file_name, dir_name){
 
-  tif_files <- paste0(dir_name, "/", list.files(dir_name, pattern = ".tif$"))
+  raw_rastesrs <- lapply(file_name, function(f){
 
-  tif_subset <- tif_files[grep(file_name, tif_files)]
+    tif_files <- paste0(dir_name, "/", list.files(dir_name, pattern = ".tif$"))
 
-  raster_list = lapply(tif_subset, function(soil_layer) raster::raster(soil_layer))
+    tif_subset <- tif_files[grep(f, tif_files)]
 
-  return(raster_list)
+    raster_list = lapply(tif_subset, function(soil_layer) raster::raster(soil_layer))
+
+    return(raster_list)
+
+  })
 
 }
