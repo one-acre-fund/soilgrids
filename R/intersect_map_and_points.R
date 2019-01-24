@@ -1,8 +1,8 @@
 #' Create intersected map to use to crop velox rasters.
 #' @param country_iso The country iso code to indicate which country the GPS
 #'   points are in to know how to trim the data
-#' @inheritParams match_soil_crs this ensures that the spdf and country polygons
-#'   match the soil data
+#' @inheritParams crop_raster_to_country this ensures that the spdf and country polygons
+#'   match the soil data before going through the cropping
 #' @return velox raster cropped to the area where soil points are
 #' @examples
 #' apply_soil_weights("ph_soil_layer.tif")
@@ -15,7 +15,7 @@ intersect_map_and_points <- function(spdf, country_iso, data_directory){
 
   boundaries <- match_soil_crs(boundaries_raw)
 
-  country_map <- intersect(boundaries, spdf)
+  country_map <- raster::intersect(boundaries, spdf)
 
   return(country_map)
 
