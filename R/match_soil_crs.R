@@ -8,7 +8,7 @@
 
 match_soil_crs <- function(obj_to_convert){
 
-  assertthat::assert_that(is.projected(obj_to_convert))
+  #assertthat::assert_that(is.projected(obj_to_convert))
 
   soil_crs <- "+proj=laea +lat_0=5 +lon_0=20 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0"
   if(sp::proj4string(obj_to_convert) != soil_crs){
