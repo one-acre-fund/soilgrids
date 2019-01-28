@@ -13,16 +13,21 @@
 #' import_soil_rasters("af_PHIHOX_T__M", "/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/")
 
 get_soil_data <- function(spdf, country_iso,
-                          soil_layers = c("ph", "carbon", "soil_texture", "sand", "silt", "clay", "CEC"),
+                          soil_layers = c("ph", "carbon", "soil_texture", "sand", "silt", "clay", "CEC", "p", "n"),
                           raw_data_directory,
                           country_polygon_directory){
 
   raw_rasters <- import_soil_rasters(layers_to_files(soil_layers), raw_data_directory)
 
-  data_extract <- extract_soil_gps(convert_soil_to_velox(
-    stack_and_sum_soil(
-      apply_soil_weights(
-        crop_raster_to_country(raw_rasters, spdf, country_iso, country_polygon_directory)))), spdf, layers_to_files(soil_layers)$param)
+  # here is where I'll add in P and N based on their special needs. These will just be generally accessible through the standard import process once saved.
+  # prepare_p_layer(raw_data_directory, forceUpdate = FALSE)
+  # prepare_n_layer(raw_data_directory, forceUpdate = FALSE)
+
+  data_extract <- extract_soil_gps(
+    convert_soil_to_velox(
+      stack_and_sum_soil(
+        apply_soil_weights(
+          crop_raster_to_country(raw_rasters, spdf, country_iso, country_polygon_directory)))), spdf, layers_to_files(soil_layers)$param)
 
   df <- cbind(spdf@data, data_extract)
 
