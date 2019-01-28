@@ -13,13 +13,17 @@ apply_soil_weights <- function(raster_list, weight_list = list(5/30, 10/30, 15/3
     stop("\n Weights don't add up to 1. Check weights.")
   }
 
-  sublist_length <- lapply(raster_list, function(l) length(l))
+  filtered_list <- length_filter(raster_list)
+
+  sublist_length <- lapply(filtered_list[[1]], function(l) length(l))
   if(!all(sublist_length == length(weight_list))){
     stop("\n weight list is not the same length as soil rasters. Check rasters and weights!")
   }
 
-  raster_weights = lapply(raster_list, function(soil_set){
+  layers_to_weigh = lapply(filtered_list[[1]], function(soil_set){
     Map("*", soil_set, weight_list)})
+
+  raster_weights <- c(layers_to_weigh, filtered_list[[2]])
 
   return(raster_weights)
 
