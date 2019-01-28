@@ -9,10 +9,14 @@
 
 stack_and_sum_soil <- function(raster_list){
 
-  soil_stack <- lapply(raster_list, function(data_layer){
+  filtered_list <- length_filter(raster_list)
+
+  soil_stack <- lapply(filtered_list[[1]], function(data_layer){
     return(sum(raster::stack(data_layer)))
   })
 
-  return(soil_stack)
+  soil_list <- c(soil_stack, unlist(filtered_list[[2]]))
+
+  return(soil_list)
 
 }
