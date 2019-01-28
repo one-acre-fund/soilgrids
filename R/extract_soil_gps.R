@@ -5,7 +5,8 @@
 #' @inheritParams convert_to_velox
 #' @inheritParams get_soil_data Takes the soil_layer input to assign names to the output data.
 #' @return A list of velox raster extracts with one point per lon/lat in the spdf
-#' @export
+#' @example
+#' extract_soil_gps(raster_list, SpatialPointsDataFrame, c("ph", "n"))
 
 extract_soil_gps <- function(velox_raster, spdf, soil_layers){
 
