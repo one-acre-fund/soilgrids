@@ -13,10 +13,12 @@ Imports:
     raster,
     velox,
     tidyverse,
-    assertthat
+    assertthat,
+    arc2weather
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true
 Suggests: 
     testthat
 RoxygenNote: 6.1.1
+Remotes: one-acre-fund/arc2weather
