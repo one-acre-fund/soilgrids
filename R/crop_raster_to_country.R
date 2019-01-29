@@ -1,10 +1,7 @@
-#' Take the velox raster and crop the velox objects down to the area where the
-#' SPDF points are
+#' Take the velox raster and crop the velox objects down to the area where the SPDF points are
 #' @param raster_list The original list of raster before converting to velox.
-#' @param country_iso The country iso code to indicate which country the GPS
-#'   points are in to know how to trim the data
-#' @inheritParams match_soil_crs this ensures that the spdf and country polygons
-#'   match the soil data
+#' @param country_iso The country iso code to indicate which country the GPS points are in to know how to trim the data
+#' @inheritParams match_soil_crs
 #' @return  raster cropped to the area where soil points are so that we don't care the raw soil rasters through the extract process.
 #' @note I've included an if statement in the event there's only one requested soil parameter. There must be a cleaner way to do this.
 #' @examples

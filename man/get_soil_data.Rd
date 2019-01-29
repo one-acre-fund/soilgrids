@@ -4,11 +4,17 @@
 \alias{get_soil_data}
 \title{Executes the full soil extraction process}
 \usage{
-get_soil_data(df, lonCol = NULL, latCol = NULL, country_iso,
+get_soil_data(df, lon_col = NULL, lat_col = NULL, country_iso,
   soil_layers = c("ph", "carbon", "soil_texture", "sand", "silt", "clay",
   "CEC", "p", "n"), raw_data_directory, country_polygon_directory)
 }
 \arguments{
+\item{df}{set of GPS points for which the user wants an export}
+
+\item{lon_col}{the longitude column in the data}
+
+\item{lat_col}{the latitude column in the data}
+
 \item{country_iso}{The country in which these points are located to trim down the data.}
 
 \item{soil_layers}{The soil variables the user wants returned in the dataframe for those soil points. The soil layers need to be one of the following:
@@ -17,8 +23,6 @@ c(ph, carbon, soil_texture, sand, silt, clay, CEC, nitrogen) which are soil ph, 
 \item{raw_data_directory}{The location where the data are located to know where to get the raw tif. This defaults to the current working directory.}
 
 \item{country_polygon_directory}{The file directory with the country polygon files. These are available for download with the get_country_polygon() function}
-
-\item{spdf}{The set of GPS points for which the user wants an export}
 }
 \value{
 The original spdf data frame along with the extracted soil layers.

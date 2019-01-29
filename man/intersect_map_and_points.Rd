@@ -7,8 +7,7 @@
 intersect_map_and_points(spdf, country_iso, data_directory)
 }
 \arguments{
-\item{country_iso}{The country iso code to indicate which country the GPS
-points are in to know how to trim the data}
+\item{country_iso}{The country iso code to indicate which country the GPS points are in to know how to trim the data}
 }
 \value{
 velox raster cropped to the area where soil points are

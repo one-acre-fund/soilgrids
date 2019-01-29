@@ -1,8 +1,7 @@
 #' checks that country boundaries exist and if they don't downloads them.
 #' @param country_polygon_directory the directory where the shape files live
-#' @note This function is pretty simplistic. It can be simplified by condensing the repeated code.
+#' @note This function is pretty simplistic. It can be simplified by condensing the repeated code. This funciton lets people update the shape files from the GADM website.
 #' @return Clarification that all the countries exist as expected in the designated location
-#' @notes This funciton lets people update the shape files from the GADM website.
 #' @export
 
 get_country_polygons <- function(country_polygon_directory) {

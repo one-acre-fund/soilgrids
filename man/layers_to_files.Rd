@@ -2,7 +2,7 @@
 % Please edit documentation in R/layers_to_files.R
 \name{layers_to_files}
 \alias{layers_to_files}
-\title{Takes soil layers and converts to file names from soil grids webiste}
+\title{Takes soil layers and converts to file names from soil grids website}
 \usage{
 layers_to_files(soil_layers)
 }
@@ -13,7 +13,7 @@ layers_to_files(soil_layers)
 a vector of the file names to get from the data_directory
 }
 \description{
-Takes soil layers and converts to file names from soil grids webiste
+Takes soil layers and converts to file names from soil grids website
 }
 \note{
 I'll need to use the same files_to_get df to assign variables names following the extract

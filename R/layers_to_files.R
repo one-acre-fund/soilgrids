@@ -1,4 +1,4 @@
-#' Takes soil layers and converts to file names from soil grids webiste
+#' Takes soil layers and converts to file names from soil grids website
 #'
 #' @param soil_layers a vector of the desired soil layers to check against df of file names
 #' @return a vector of the file names to get from the data_directory

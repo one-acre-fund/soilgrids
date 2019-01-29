@@ -17,3 +17,6 @@ A list of velox raster extracts with one point per lon/lat in the spdf
 \description{
 Extracts values for GPS df from soil velox raster
 }
+\examples{
+extract_soil_gps(raster_list, SpatialPointsDataFrame, c("ph", "n"))
+}

@@ -2,11 +2,8 @@
 #'
 #' @param veloxRaster A list of velox raster from which to extract values
 #' @param spdf A SpatialPointsDataFrame of the GPS for which we'll be extracting data from the velox raster.
-#' @inheritParams convert_to_velox
-#' @inheritParams get_soil_data Takes the soil_layer input to assign names to the output data.
 #' @return A list of velox raster extracts with one point per lon/lat in the spdf
-#' @example
-#' extract_soil_gps(raster_list, SpatialPointsDataFrame, c("ph", "n"))
+#' @examples extract_soil_gps(raster_list, SpatialPointsDataFrame, c("ph", "n"))
 
 extract_soil_gps <- function(velox_raster, spdf, soil_layers){
 

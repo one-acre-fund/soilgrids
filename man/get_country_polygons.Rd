@@ -16,5 +16,5 @@ Clarification that all the countries exist as expected in the designated locatio
 checks that country boundaries exist and if they don't downloads them.
 }
 \note{
-This function is pretty simplistic. It can be simplified by condensing the repeated code.
+This function is pretty simplistic. It can be simplified by condensing the repeated code. This funciton lets people update the shape files from the GADM website.
 }
