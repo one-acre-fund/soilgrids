@@ -18,8 +18,8 @@
 #'
 
 get_soil_data <- function(df,
-                          lon_col = NULL,
                           lat_col = NULL,
+                          lon_col = NULL,
                           country_iso,
                           soil_layers = c("ph", "carbon", "soil_texture", "sand", "silt", "clay", "CEC", "p", "n"),
                           raw_data_directory,
@@ -33,7 +33,7 @@ get_soil_data <- function(df,
 
   #soil_crs <- "+proj=laea +lat_0=5 +lon_0=20 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0"
 
-  spdf <- arc2weather::convert_spdf(df, lon_col = "Longitude", lat_col = "Latitude")
+  spdf <- arc2weather::convert_spdf(df, lat = lat_col, lon = lon_col)
 
   data_extract <- extract_soil_gps(
     convert_soil_to_velox(
