@@ -4,13 +4,11 @@
 \alias{get_soil_data}
 \title{Executes the full soil extraction process}
 \usage{
-get_soil_data(spdf, country_iso, soil_layers = c("ph", "carbon",
-  "soil_texture", "sand", "silt", "clay", "CEC"), raw_data_directory,
-  country_polygon_directory)
+get_soil_data(df, lonCol = NULL, latCol = NULL, country_iso,
+  soil_layers = c("ph", "carbon", "soil_texture", "sand", "silt", "clay",
+  "CEC", "p", "n"), raw_data_directory, country_polygon_directory)
 }
 \arguments{
-\item{spdf}{The set of GPS points for which the user wants an export}
-
 \item{country_iso}{The country in which these points are located to trim down the data.}
 
 \item{soil_layers}{The soil variables the user wants returned in the dataframe for those soil points. The soil layers need to be one of the following:
@@ -19,6 +17,8 @@ c(ph, carbon, soil_texture, sand, silt, clay, CEC, nitrogen) which are soil ph, 
 \item{raw_data_directory}{The location where the data are located to know where to get the raw tif. This defaults to the current working directory.}
 
 \item{country_polygon_directory}{The file directory with the country polygon files. These are available for download with the get_country_polygon() function}
+
+\item{spdf}{The set of GPS points for which the user wants an export}
 }
 \value{
 The original spdf data frame along with the extracted soil layers.
@@ -30,5 +30,7 @@ Executes the full soil extraction process
 This function assumes the data remain named what they are when they're down loaded from the soil grids website.
 }
 \examples{
-import_soil_rasters("af_PHIHOX_T__M", "/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/")
+get_soil_data(spdf = gps.data, country.iso = "KEN", raw_data_directory, country_polygon_directory)
+country_iso = c("KEN", "RWA", "BDI", "TZA", "UGA", "ZMB", "MWI", "ETH", "IND", "NGA")
+
 }

@@ -4,7 +4,10 @@
 \alias{get_country_polygons}
 \title{checks that country boundaries exist and if they don't downloads them.}
 \usage{
-get_country_polygons(data_directory)
+get_country_polygons(country_polygon_directory)
+}
+\arguments{
+\item{country_polygon_directory}{the directory where the shape files live}
 }
 \value{
 Clarification that all the countries exist as expected in the designated location
