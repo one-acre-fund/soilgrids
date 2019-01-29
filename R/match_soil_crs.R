@@ -3,7 +3,7 @@
 #' @param obj_to_convert The spdf or polygon we need to convert
 #' @return that same object but in the correct CRS
 #' @examples
-#' apply_soil_weights("ph_soil_layer.tif")
+#' match_soil_crs()
 
 
 match_soil_crs <- function(obj_to_convert){
