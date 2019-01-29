@@ -8,14 +8,19 @@
 get_country_polygons <- function(country_polygon_directory) {
 
   country_iso <- c("KEN", "RWA", "BDI", "TZA", "UGA", "ZMB", "MWI", "ETH", "IND", "NGA")
-  country_files <- paste0("GADM_2.8_", country_iso, "_adm2.rds")
+  country_files <- paste0("gadm36_", country_iso, "_2_sp.rds")
 
-  available_files <- list.files(country_polygon_directory, pattern = "_adm2")
+  available_files <- list.files(country_polygon_directory, pattern = "_adm2|gadm36")
   files_to_get <- country_files[!country_files %in% available_files]
 
-  countries_to_get <- gsub("GADM_2.8_|_adm2.rds", "", files_to_get)
+  # add in check to see if files_to_get is not NULL. if NULL then return that the files already exist!
+  if(length(files_to_get) == 0){
+    return(print("\n We already have shape files for all countries!"))
+  }
+
+  countries_to_get <- gsub("gadm36_|_2_sp.rds", "", files_to_get)
 
   for(i in seq_along(countries_to_get)){
-    raster::getData("GADM", country=i, level=2, path = country_polygon_directory)
+    raster::getData("GADM", country=countries_to_get[i], level=2, path = country_polygon_directory)
   }
 }
