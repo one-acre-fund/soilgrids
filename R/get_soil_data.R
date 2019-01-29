@@ -31,7 +31,7 @@ get_soil_data <- function(df,
 
   soil_crs <- "+proj=laea +lat_0=5 +lon_0=20 +x_0=0 +y_0=0 +datum=WGS84 +units=m +no_defs +ellps=WGS84 +towgs84=0,0,0"
 
-  spdf <- arc2weather::convert_to_spdf(df, lonCol = "Longitude", latCol = "Latitude", soil_crs)
+  spdf <- arc2weather::convert_spdf(df, lonCol = "Longitude", latCol = "Latitude", soil_crs)
 
   data_extract <- extract_soil_gps(
     convert_soil_to_velox(
