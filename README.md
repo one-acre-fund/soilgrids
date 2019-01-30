@@ -45,3 +45,14 @@ soil_data <- get_soil_data(spdf = siteSp,
 # where siteSp is a SpatialPointsDataFrame of GPS and associated location information. 
 
 ~~~~
+
+# Notes on units
+
+The SoilGrids units are:
+
+* pH - these values are originally come in pH x 10. I've convereted them to the standard scale by dividing by 10.
+* Carbon (SOC) - g/kg. Work with Step to resolve how to convert this to %C.
+* Nitrogen - mg/kg
+* Phosphorous - mg/kg
+* CEC - cmolc/kg
+* sand, silt, clay - w% (percent of weight)
