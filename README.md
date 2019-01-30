@@ -21,7 +21,7 @@ To install this package, please do the following:
 
 The primary function will be `get_soil_data()` which takes four inputs:
 
-* `spdf` - a SpatialPointsDataFrame that includes the GPS points of interest
+* `df` - a data.frame or SpatialPointsDataFrame that includes the GPS points of interest. If you supply a data.frame, you'll also need to indicate which columns in the data.frame have the lat/lon information. Currently the system assumes that the default projection for the data is `+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0` or `ESPG::4326`.
 * `country_iso` - the country ISO code for the country in which the points are located. This allows the package to trim down the data and simplify the amount of data we're working with. Right now you can only access points from one country at a time but future releases will expand on this. 
 * `soil_layers` - The soil data you're interested in have. Right now you can access any of ph, carbon, soil_texture, sand, silt, clay, or CEC. I'll adding more soil chemistry and texture layers soon.
 * `raw_data_directory` - the file location on your local computer of the raw soil data downloaded from Soil Grids. This component is engineered for 1AF's current set up and will likely be a point of improvement in future versions.
@@ -32,17 +32,22 @@ Finally, the package currently assumes you have all the right data downloaded lo
 Here's an example call of the main function to extract data for Kenya GPS points:
 
 ~~~~
-
-# first, make sure you install the `soilgrids` package following the instructions above.
 library(soilgrids)
-
-soil_data <- get_soil_data(spdf = siteSp, 
+# where siteSp is a SpatialPointsDataFrame of GPS and associated location information.
+soil_data <- get_soil_data(df = siteSp, 
                           country_iso = "KEN", 
                           soil_layers = c("ph", "carbon"), 
                           raw_data_directory = "/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/", 
                           country_polygon_directory = "/Users/mlowes/Google Drive/analyses/soil_grids_data/")
 
-# where siteSp is a SpatialPointsDataFrame of GPS and associated location information. 
+# where the data provided is a data.frame. 
+
+get_soil_data(df = zam_data,
+              lat_col = "Latitude",
+              lon_col = "Longitude",
+              country_iso = "ZMB",
+              raw_data_directory = "/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/",
+              country_polygon_directory = "/Users/mlowes/Google Drive/analyses/soil_grids_data/")
 
 ~~~~
 
