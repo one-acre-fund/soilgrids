@@ -27,7 +27,7 @@ The primary function will be `get_soil_data()` which takes four inputs:
 * `raw_data_directory` - the file location on your local computer of the raw soil data downloaded from Soil Grids. This component is engineered for 1AF's current set up and will likely be a point of improvement in future versions.
 * `country_polygon_directory` - the file location with the country polygons. These polygons are used to crop the soil data so that we're passing smaller datasets behind the scenes before extracting the data for the GPS points.
 
-Finally, the package currently assumes you have all the right data downloaded locally. This works for 1AF since we can share Google Drive folders with the [raw data](https://drive.google.com/open?id=1piqHGLXffirXQAa4oSFTUcjieQY8tud8) and the [country polygons](https://drive.google.com/open?id=1bXO74V5c4URUqtkPVeyABywjpfmFW2Mx).
+Finally, the package currently assumes you have all the right data downloaded locally. This works for 1AF since we can share Google Drive folders with the [raw data](https://drive.google.com/drive/folders/1piqHGLXffirXQAa4oSFTUcjieQY8tud8?usp=sharing) and the [country polygons](https://drive.google.com/drive/folders/1bXO74V5c4URUqtkPVeyABywjpfmFW2Mx?usp=sharing).
 
 Here's an example call of the main function to extract data for Kenya GPS points:
 
