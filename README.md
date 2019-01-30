@@ -22,8 +22,8 @@ To install this package, please do the following:
 The primary function will be `get_soil_data()` which takes four inputs:
 
 * `df` - a data.frame or SpatialPointsDataFrame that includes the GPS points of interest. If you supply a data.frame, you'll also need to indicate which columns in the data.frame have the lat/lon information. Currently the system assumes that the default projection for the data is `+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0` or `ESPG::4326`.
-* `country_iso` - the country ISO code for the country in which the points are located. This allows the package to trim down the data and simplify the amount of data we're working with. Right now you can only access points from one country at a time but future releases will expand on this. 
-* `soil_layers` - The soil data you're interested in have. Right now you can access any of ph, carbon, soil_texture, sand, silt, clay, or CEC. I'll adding more soil chemistry and texture layers soon.
+* `lat_col` and `lon_col` - if you provide a data.frame, you need to indicate which variables in the data have the latitude and longitude information.
+* `country_iso` - the country ISO code for the country in which the points are located. This allows the package to trim down the data and simplify the amount of data we're working with. Right now you can only access points from one country at a time but future releases will expand on this if you wanted to access data across multiple countries at once.
 * `raw_data_directory` - the file location on your local computer of the raw soil data downloaded from Soil Grids. This component is engineered for 1AF's current set up and will likely be a point of improvement in future versions.
 * `country_polygon_directory` - the file location with the country polygons. These polygons are used to crop the soil data so that we're passing smaller datasets behind the scenes before extracting the data for the GPS points.
 
@@ -61,3 +61,10 @@ The SoilGrids units are:
 * Phosphorous - mg/kg
 * CEC - cmolc/kg
 * sand, silt, clay - w% (percent of weight)
+
+# Future additions
+
+* Access data across multiple countries at once rather than country by country
+* Access summaries for spatial polygons, not just spatial points
+* Potentially use the SoilGrids REST API (more 'up to date' but requires regular downloading of data in data warehouse)
+* I removed the option to select soil parameters. I might add this back in if there are use cases outside of the data warehouse where fewer columns is critical.
