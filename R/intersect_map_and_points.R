@@ -9,7 +9,7 @@
 intersect_map_and_points <- function(spdf, country_iso, data_directory){
 
   spdf <- match_soil_crs(spdf)
-  boundaries_raw <- readRDS(paste0(data_directory, "/GADM_2.8_", country_iso, "_adm2.rds"))
+  boundaries_raw <- readRDS(paste0(data_directory, "/gadm36_", country_iso, "_2_sp.rds"))
 
   boundaries <- match_soil_crs(boundaries_raw)
 
