@@ -4,16 +4,16 @@
 \alias{get_soil_data}
 \title{Executes the full soil extraction process}
 \usage{
-get_soil_data(df, lon_col = NULL, lat_col = NULL, country_iso,
+get_soil_data(df, lat_col = NULL, lon_col = NULL, country_iso,
   soil_layers = c("ph", "carbon", "soil_texture", "sand", "silt", "clay",
   "CEC", "p", "n"), raw_data_directory, country_polygon_directory)
 }
 \arguments{
 \item{df}{set of GPS points for which the user wants an export}
 
-\item{lon_col}{the longitude column in the data}
-
 \item{lat_col}{the latitude column in the data}
+
+\item{lon_col}{the longitude column in the data}
 
 \item{country_iso}{The country in which these points are located to trim down the data.}
 
