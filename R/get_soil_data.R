@@ -10,12 +10,18 @@
 #' @param country_polygon_directory The file directory with the country polygon files. These are available for download with the get_country_polygon() function
 #' @inheritParams arc2weather::convert_spdf
 #' @return The original spdf data frame along with the extracted soil layers.
-#' @note This function assumes the data remain named what they are when they're down loaded from the soil grids website.
+#' @note This function assumes the data remain named what they are when they're down loaded from the soil grids website. The units for the soil parameters
+#' are available on the repo website, https://github.com/one-acre-fund/soilgrids, as well as listed out here:
+#' pH - standard pH scale.
+#' Carbon (SOC) - g/kg.
+#' Nitrogen - mg/kg.
+#' Phosphorous - mg/kg.
+#' CEC - cmolc/kg.
+#' sand, silt, clay - %w (percent of weight)
 #' @export
 #' @examples
 #' get_soil_data(spdf = gps.data, country.iso = "KEN", raw_data_directory, country_polygon_directory)
 #' country_iso = c("KEN", "RWA", "BDI", "TZA", "UGA", "ZMB", "MWI", "ETH", "IND", "NGA")
-#'
 
 get_soil_data <- function(df,
                           lat_col = NULL,
@@ -42,6 +48,8 @@ get_soil_data <- function(df,
           crop_raster_to_country(raw_rasters, spdf, country_iso, country_polygon_directory)))), spdf, layers_to_files(soil_layers)$param)
 
   df <- cbind(spdf@data, data_extract)
+
+  df <- convert_soil_units(df)
 
   return(df)
 
