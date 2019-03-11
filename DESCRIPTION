@@ -16,7 +16,7 @@ Imports:
     assertthat (>= 0.2.0),
     arc2weather (>= 0.0.0.9000),
     magrittr
-License: MIT + file LICENStE
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 

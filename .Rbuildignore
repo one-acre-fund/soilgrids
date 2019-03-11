@@ -3,3 +3,5 @@
 ^\.Rproj\.user$
 function_test.R
 example_output.csv
+soilgrids_api.R
+LICENSE.md
