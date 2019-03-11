@@ -9,6 +9,6 @@
 convert_soil_units <- function(soil_df){
 
   return(soil_df %>%
-           dplyr::mutate(ph = ph / 10))
+           dplyr::mutate(.$ph = .$ph / 10))
 
 }
