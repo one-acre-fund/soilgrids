@@ -9,7 +9,7 @@
 
 convert_soil_units <- function(soil_df, variable){
 
-  variable = rlang::enquo(variable)f
+  variable = rlang::enquo(variable)
   soil_df <- soil_df %>% dplyr::mutate(!!variable := !!variable / 10)
 
   return(soil_df)
