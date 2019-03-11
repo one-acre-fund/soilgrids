@@ -4,10 +4,12 @@
 \alias{convert_soil_units}
 \title{Creates full raster layers for each soil component, applying weights to each}
 \usage{
-convert_soil_units(soil_df)
+convert_soil_units(soil_df, variable)
 }
 \arguments{
 \item{soil_df}{a list of raster data for each soil property to which to apply the weights}
+
+\item{variable}{the variable to transform. This function is SUPER SIMPLISTIC.}
 }
 \value{
 the output data set that converts the raw units to more user friendly interpretations

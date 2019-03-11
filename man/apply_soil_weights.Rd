@@ -18,5 +18,5 @@ a single raster for each soil component with appropriate weights applied
 Creates full raster layers for each soil component, applying weights to each
 }
 \examples{
-apply_soil_weights("ph_soil_layer.tif")
+apply_soil_weights(...)
 }
