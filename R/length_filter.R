@@ -3,6 +3,7 @@
 #' @return A list with two elements, the first is the set to be weighted or summed, the second is to be combined with the results of the first.
 #' @examples
 #' apply_soil_weights("ph_soil_layer.tif")
+#' length_filter(list_of_rasters)
 
 
 length_filter <- function(raster_list){
