@@ -6,9 +6,11 @@
 #' get_soil_data(...)
 
 
-convert_soil_units <- function(soil_df){
+convert_soil_units <- function(soil_df, variable){
+
+  variable = rlang::enquo(variable)
 
   return(soil_df %>%
-           dplyr::mutate(.$ph = .$ph / 10))
+           dplyr::mutate(!!variable = !!variable / 10))
 
 }
