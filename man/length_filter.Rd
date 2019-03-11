@@ -17,4 +17,5 @@ Breaks list based on subsets with 3 layers and those with one to handle exceptio
 }
 \examples{
 apply_soil_weights("ph_soil_layer.tif")
+length_filter(list_of_rasters)
 }

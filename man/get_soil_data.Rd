@@ -39,8 +39,8 @@ Nitrogen - mg/kg.
 Phosphorous - mg/kg.
 CEC - cmolc/kg.
 sand, silt, clay - %w (percent of weight)
+#' country_iso = c("KEN", "RWA", "BDI", "TZA", "UGA", "ZMB", "MWI", "ETH", "IND", "NGA")
 }
 \examples{
 get_soil_data(spdf = gps.data, country.iso = "KEN", raw_data_directory, country_polygon_directory)
-country_iso = c("KEN", "RWA", "BDI", "TZA", "UGA", "ZMB", "MWI", "ETH", "IND", "NGA")
 }

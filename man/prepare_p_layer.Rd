@@ -9,8 +9,9 @@ prepare_p_layer(raw_data_directory, forceUpdate)
 }
 \arguments{
 \item{raw_data_directory}{the location of the file. This should be the in the
-same place as the other raw data.
-@param forceUpdate ensures we don't accidentally run this re-projection again. It takes a long time!}
+same place as the other raw data.}
+
+\item{forceUpdate}{ensures we don't accidentally run this re-projection again. It takes a long time!}
 }
 \value{
 a vector of the file names to get from the data_directory

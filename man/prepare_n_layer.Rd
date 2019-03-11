@@ -10,6 +10,9 @@ prepare_n_layer(raw_data_directory, forceUpdate)
 \arguments{
 \item{raw_data_directory}{the location of the file. This should be the in the
 same place as the other raw data.}
+
+\item{forceUpdate}{boolean to determine if we have to refresh the whole procedure or just
+load the previous version.}
 }
 \value{
 a vector of the file names to get from the data_directory

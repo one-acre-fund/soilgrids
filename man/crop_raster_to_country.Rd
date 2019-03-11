@@ -9,7 +9,11 @@ crop_raster_to_country(raster_list, spdf, country_iso, data_directory)
 \arguments{
 \item{raster_list}{The original list of raster before converting to velox.}
 
+\item{spdf}{SpatialPointsDataFrame to determine extent of interest.}
+
 \item{country_iso}{The country iso code to indicate which country the GPS points are in to know how to trim the data}
+
+\item{data_directory}{The data directory where the polygons are saved.}
 }
 \value{
 raster cropped to the area where soil points are so that we don't care the raw soil rasters through the extract process.

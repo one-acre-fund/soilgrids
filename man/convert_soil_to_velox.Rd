@@ -16,5 +16,5 @@ a velox raster version of the soil data for extraction
 Converts soil raster to velox
 }
 \examples{
-convert_soil_to_velox(list("ph_soil_layer.tif". "n_soil_layer.tif"))
+convert_soil_to_velox(list("ph_soil_layer.tif", "n_soil_layer.tif"))
 }
