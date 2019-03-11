@@ -1,6 +1,6 @@
 # Soil grids data access package
 
-[![Build Status](https://travis-ci.org/mattlowes/soilgrids.svg?branch=master)](https://travis-ci.org/mattlowes/soilgrids)
+[![Build Status](https://travis-ci.org/mattlowes/soilgrids.svg?branch=master)](https://travis-ci.org/one-acre-fund/soilgrids)
 
 This package makes working with data from the [ISRIC Soil Grids](https://soilgrids.org/#!/?layer=ORCDRC_M_sl2_250m&vector=1) data set easier. One Acre Fund collects soil data for analysis in our own lab however we lack the coverage to describe soils in our program area broadly or in new places where we don't yet work.
 
