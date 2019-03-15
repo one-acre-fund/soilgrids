@@ -16,6 +16,5 @@ A list with two elements, the first is the set to be weighted or summed, the sec
 Breaks list based on subsets with 3 layers and those with one to handle exceptions in the weights and sum portions.
 }
 \examples{
-apply_soil_weights("ph_soil_layer.tif")
-length_filter(list_of_rasters)
+\dontrun{length_filter(list_of_rasters)}
 }

@@ -4,7 +4,7 @@
 #' @return a vector of the file names to get from the data_directory
 #' @note I'll need to use the same files_to_get df to assign variables names following the extract
 #' @examples
-#' layers_to_files(c("carbon", "CEC"))
+#' \dontrun{layers_to_files(c("carbon", "CEC"))}
 
 
 layers_to_files <- function(soil_layers){

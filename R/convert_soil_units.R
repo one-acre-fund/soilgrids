@@ -4,13 +4,12 @@
 #' @return the output data set that converts the raw units to more user friendly interpretations
 #' @note This function will live within the master function call to share the output directly.
 #' @examples
-#' get_soil_data(...)
+#' \dontrun{convert_soil_units(soil_data, "ph")}
 
 
 convert_soil_units <- function(soil_df, variable){
 
-  variable = rlang::enquo(variable)
-  soil_df <- soil_df %>% dplyr::mutate(!!variable := !!variable / 10)
+  soil_df[,"variable"] <- soil_df[,"variable"] / 10
 
   return(soil_df)
 

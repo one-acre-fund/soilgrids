@@ -18,5 +18,6 @@ a list of rasters for each soil component
 imports appropriate rasters to create soil layers
 }
 \examples{
-import_soil_rasters("af_PHIHOX_T__M", "/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/")
+\dontrun{import_soil_rasters("af_PHIHOX_T__M",
+"/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/")}
 }

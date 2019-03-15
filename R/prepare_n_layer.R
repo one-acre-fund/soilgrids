@@ -13,7 +13,7 @@
 #'   There's no input for the function because it executes a standard data
 #'   transformation.
 #' @examples
-#' layers_to_files(c("carbon", "CEC"))
+#' \dontrun{layers_to_files(c("carbon", "CEC"))}
 
 
 prepare_n_layer <- function(raw_data_directory, forceUpdate){

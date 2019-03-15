@@ -5,7 +5,7 @@
 #' @inheritParams crop_raster_to_country
 #' @return velox raster cropped to the area where soil points are
 #' @examples
-#' apply_soil_weights("ph_soil_layer.tif")
+#' \dontrun{apply_soil_weights("ph_soil_layer.tif")}
 
 
 intersect_map_and_points <- function(spdf, country_iso, data_directory){

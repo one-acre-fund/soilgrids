@@ -18,10 +18,12 @@
 #' Phosphorous - mg/kg.
 #' CEC - cmolc/kg.
 #' sand, silt, clay - %w (percent of weight)
-#' #' country_iso = c("KEN", "RWA", "BDI", "TZA", "UGA", "ZMB", "MWI", "ETH", "IND", "NGA")
+#' country_iso = c("KEN", "RWA", "BDI", "TZA", "UGA", "ZMB", "MWI", "ETH", "IND", "NGA")
 #' @export
 #' @examples
-#' get_soil_data(spdf = gps.data, country.iso = "KEN", raw_data_directory, country_polygon_directory)
+#' \dontrun{get_soil_data(spdf = gps.data,
+#' country.iso = "KEN", raw_data_directory,
+#' country_polygon_directory)}
 
 get_soil_data <- function(df,
                           lat_col = NULL,

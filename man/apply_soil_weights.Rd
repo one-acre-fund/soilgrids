@@ -2,7 +2,7 @@
 % Please edit documentation in R/apply_soil_weights.R
 \name{apply_soil_weights}
 \alias{apply_soil_weights}
-\title{Creates full raster layers for each soil component, applying weights to each}
+\title{Creates full raster layers for each soil component applying weights to each}
 \usage{
 apply_soil_weights(raster_list, weight_list = list(5/30, 10/30, 15/30))
 }
@@ -15,8 +15,8 @@ apply_soil_weights(raster_list, weight_list = list(5/30, 10/30, 15/30))
 a single raster for each soil component with appropriate weights applied
 }
 \description{
-Creates full raster layers for each soil component, applying weights to each
+Creates full raster layers for each soil component applying weights to each
 }
 \examples{
-apply_soil_weights(...)
+\dontrun{apply_soil_weights(raster_list, weight_list = list(5/30, 10/30, 15/30))}
 }

@@ -18,5 +18,5 @@ Given SPDF and country where the points are, put the SPDF and country outline
 in the same CRS as the soil data which we know is fixed
 }
 \examples{
-match_soil_crs()
+\dontrun{match_soil_crs(raster_object)}
 }

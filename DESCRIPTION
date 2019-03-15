@@ -13,6 +13,7 @@ Imports:
     raster (>= 2.8.4),
     velox (>= 0.2.0),
     tidyverse (>= 1.2.1),
+    dplyr (>= 0.8.0.1),
     assertthat (>= 0.2.0),
     arc2weather (>= 0.0.0.9000),
     magrittr,

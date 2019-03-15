@@ -5,7 +5,7 @@
 #' @param soil_layers the names of the variables being extracted. These are applied to the extracted values.
 #' @return A list of velox raster extracts with one point per lon/lat in the spdf
 #' @examples
-#' extract_soil_gps(raster_list, SpatialPointsDataFrame, c("ph", "n"))
+#' \dontrun{extract_soil_gps(raster_list, SpatialPointsDataFrame, c("ph", "n"))}
 
 extract_soil_gps <- function(velox_raster, spdf, soil_layers){
 

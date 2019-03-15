@@ -19,5 +19,5 @@ Takes soil layers and converts to file names from soil grids website
 I'll need to use the same files_to_get df to assign variables names following the extract
 }
 \examples{
-layers_to_files(c("carbon", "CEC"))
+\dontrun{layers_to_files(c("carbon", "CEC"))}
 }

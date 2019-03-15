@@ -29,5 +29,5 @@ I'll do this once for P and for N so that we don't have to reproject
   transformation.
 }
 \examples{
-layers_to_files(c("carbon", "CEC"))
+\dontrun{layers_to_files(c("carbon", "CEC"))}
 }

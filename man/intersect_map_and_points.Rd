@@ -20,5 +20,5 @@ velox raster cropped to the area where soil points are
 Create intersected map to use to crop velox rasters.
 }
 \examples{
-apply_soil_weights("ph_soil_layer.tif")
+\dontrun{apply_soil_weights("ph_soil_layer.tif")}
 }

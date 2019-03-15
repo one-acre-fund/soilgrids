@@ -20,5 +20,5 @@ Takes weighted soil layers, creates stack, and sums values to create single soil
 This is a pretty simple function but I wanted to keep this separate from the other preparation stages.
 }
 \examples{
-stack_and_sum_soil()
+\dontrun{stack_and_sum_soil()}
 }

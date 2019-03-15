@@ -3,7 +3,7 @@
 #' @param obj_to_convert The spdf or polygon we need to convert
 #' @return that same object but in the correct CRS
 #' @examples
-#' match_soil_crs()
+#' \dontrun{match_soil_crs(raster_object)}
 
 
 match_soil_crs <- function(obj_to_convert){

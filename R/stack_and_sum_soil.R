@@ -3,7 +3,7 @@
 #' @return a single raster layer that sums the soil values including the weights
 #'   for the velox extraction stage
 #' @examples
-#' stack_and_sum_soil()
+#' \dontrun{stack_and_sum_soil()}
 #' @note This is a pretty simple function but I wanted to keep this separate from the other preparation stages.
 
 

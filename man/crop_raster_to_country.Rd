@@ -25,5 +25,5 @@ Take the velox raster and crop the velox objects down to the area where the SPDF
 I've included an if statement in the event there's only one requested soil parameter. There must be a cleaner way to do this.
 }
 \examples{
-crop_raster_to_country("ph_soil_raster.tif", "KEN", "/path/to/directory")
+\dontrun{crop_raster_to_country("ph_soil_raster.tif", "KEN", "/path/to/directory")}
 }

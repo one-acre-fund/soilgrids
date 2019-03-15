@@ -4,7 +4,8 @@
 #' @param dir_name The directory where the soil raster tif files are stored
 #' @return a list of rasters for each soil component
 #' @examples
-#' import_soil_rasters("af_PHIHOX_T__M", "/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/")
+#' \dontrun{import_soil_rasters("af_PHIHOX_T__M",
+#' "/Users/mlowes/Google Drive/analyses/soil_grids_raw_data/")}
 
 import_soil_rasters <- function(file_name, dir_name){
 

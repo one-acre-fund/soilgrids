@@ -6,7 +6,7 @@
 #' @return  raster cropped to the area where soil points are so that we don't care the raw soil rasters through the extract process.
 #' @note I've included an if statement in the event there's only one requested soil parameter. There must be a cleaner way to do this.
 #' @examples
-#' crop_raster_to_country("ph_soil_raster.tif", "KEN", "/path/to/directory")
+#' \dontrun{crop_raster_to_country("ph_soil_raster.tif", "KEN", "/path/to/directory")}
 
 
 crop_raster_to_country <- function(raster_list, spdf, country_iso, data_directory){

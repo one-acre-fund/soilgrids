@@ -21,5 +21,5 @@ Creates full raster layers for each soil component, applying weights to each
 This function will live within the master function call to share the output directly.
 }
 \examples{
-get_soil_data(...)
+\dontrun{convert_soil_units(soil_data, "ph")}
 }
