@@ -9,7 +9,7 @@
 
 convert_soil_units <- function(soil_df, variable){
 
-  soil_df[,"variable"] <- soil_df[,"variable"] / 10
+  soil_df[, variable] <- soil_df[, variable] / 10
 
   return(soil_df)
 
