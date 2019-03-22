@@ -51,7 +51,7 @@ get_soil_data <- function(df,
 
   df <- cbind(spdf@data, data_extract)
 
-  df <- convert_soil_units(df)
+  df <- convert_soil_units(df, "ph")
 
   return(df)
 
